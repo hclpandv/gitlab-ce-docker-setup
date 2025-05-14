@@ -2,7 +2,7 @@ export RESOURCE_GROUP_NAME="rg-module-test-01"
 export REGION="westeurope"
 export VM_NAME="linvm01"
 export USERNAME="azureadmin"
-export VM_SIZE="Standard_B1s"
+export VM_SIZE="Standard_B2s"
 
 # rg
 az group create --name $RESOURCE_GROUP_NAME --location $REGION
@@ -40,6 +40,3 @@ az vm open-port --port 80 --priority 110 --resource-group $RESOURCE_GROUP_NAME -
 
 # Open port 443 to allow http traffic to host.
 az vm open-port --port 443 --priority 120 --resource-group $RESOURCE_GROUP_NAME --name $VM_NAME
-
-# Open port 800 to allow http traffic to host.
-az vm open-port --port 800 --priority 130 --resource-group $RESOURCE_GROUP_NAME --name $VM_NAME
