@@ -5,9 +5,9 @@ services:
     container_name: gitlab-server
     restart: always
     ports:
-      - '8929:8929'
+      - '80:80'
       - '443:443'
-      - '2424:22'
+      - '22:22'
     volumes:
       - '$GITLAB_HOME/config:/etc/gitlab'
       - '$GITLAB_HOME/logs:/var/log/gitlab'
