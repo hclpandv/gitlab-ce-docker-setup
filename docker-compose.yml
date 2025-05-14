@@ -3,8 +3,16 @@ services:
   gitlab-server:
     image: 'gitlab/gitlab-ce:latest'
     container_name: gitlab-server
+    restart: always
     ports:
-      - '8088:80'
+      - '8929:8929'
+      - '443:443'
+      - '2424:22'
+    volumes:
+      - '$GITLAB_HOME/config:/etc/gitlab'
+      - '$GITLAB_HOME/logs:/var/log/gitlab'
+      - '$GITLAB_HOME/data:/var/opt/gitlab'
+    shm_size: '256m'
     environment:
       GITLAB_ROOT_EMAIL: "vikiscripts@github.io"
       GITLAB_ROOT_PASSWORD: "Abcd@0123456789"

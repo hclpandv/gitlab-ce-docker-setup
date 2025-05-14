@@ -40,3 +40,6 @@ az vm open-port --port 80 --priority 110 --resource-group $RESOURCE_GROUP_NAME -
 
 # Open port 443 to allow http traffic to host.
 az vm open-port --port 443 --priority 120 --resource-group $RESOURCE_GROUP_NAME --name $VM_NAME
+
+# Open port 800 to allow http traffic to host.
+az vm open-port --port 800 --priority 130 --resource-group $RESOURCE_GROUP_NAME --name $VM_NAME
